@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef,useState } from "react";
 import "../css/HomePage.css";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Lottie from "lottie-react";
@@ -20,8 +20,28 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Projects from "./Projects";
 
+
 export default function HomePage() {
   const ref = useRef();
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // After form submission
+    setSubmitted(true);
+
+    // Clear the form input fields
+    setFormData({ name: "", email: "", message: "" });
+
+    // You can add more logic here, like form validation or sending the data
+  };
 
   return (
     <div className="homePage">
@@ -215,12 +235,11 @@ export default function HomePage() {
           <section className="contactSection">
             <h2>LETS WORK</h2>
             <div className="formContainer">
-              <form
+            <form
                 netlify
                 name="contact"
                 method="POST"
-                onSubmit="submit"
-                action=""
+                onSubmit={handleSubmit}
                 className="contactForm"
               >
                 <input type="hidden" name="form-name" value="contact" />
@@ -230,6 +249,8 @@ export default function HomePage() {
                   <input
                     type="text"
                     name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
                     required
                     aria-required="true"
                   />
@@ -241,6 +262,8 @@ export default function HomePage() {
                     id="email"
                     type="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     required
                     aria-required="true"
                   />
@@ -251,14 +274,24 @@ export default function HomePage() {
                   <textarea
                     name="message"
                     rows="4"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     required
                     aria-required="true"
                   ></textarea>
                 </label>
 
-                <button type="submit">Submit</button>
+                <button
+                  type="submit"
+                  style={{
+                    backgroundColor: submitted ? "black" : "var(--primary-color)",
+                    color: submitted ? "white" : "white",
+                  }} 
+                >
+                  {submitted ? "Submit" : "Submit"}
+                </button>
               </form>
-            </div>
+            </div> 
           </section>
         </ParallaxLayer>
       </Parallax>
