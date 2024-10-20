@@ -5,9 +5,12 @@ import Lottie from "lottie-react";
 import waveSVG from "../assets/svg/101786-wave.json";
 import emailSVG from "../assets/svg/95247-email.json";
 import viteSVG from "../assets/svg/viteLogo.svg";
+import nodeSVG from "../assets/svg/node.svg"
+import web3SVG from "../assets/svg/web3.svg"
 import netlifySVG from "../assets/svg/netlifyLogo.svg";
+import javaSvg from "../assets/svg/java.svg"
 import sassSVG from "../assets/svg/sassLogo.svg";
-import myResume from "../assets/pdf/Rishabh-raj-Resume.pdf";
+import myResume from "../assets/pdf/Rishabh-raj-dev.resume.pdf";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -16,7 +19,7 @@ import {
   faHtml5,
   faCss3,
   faJsSquare,
-  faReact,
+  faReact
 } from "@fortawesome/free-brands-svg-icons";
 import Projects from "./Projects";
 
@@ -181,17 +184,20 @@ export default function HomePage() {
                   icon={faJsSquare}
                   style={{ color: "gold" }}
                 />
+                <img src={nodeSVG}/>
                 <img src={sassSVG} />
                 <FontAwesomeIcon
                   className="reactLogo"
                   icon={faReact}
                   style={{ color: "cyan" }}
                 />
+                <img src={web3SVG}/>
                 <img src={viteSVG} />
                 <img src={netlifySVG} />
+                <img src ={javaSvg}/>
               </div>
               <div className="stackLogos" aria-hidden="true">
-                <FontAwesomeIcon
+              <FontAwesomeIcon
                   className="htmlLogo"
                   icon={faHtml5}
                   style={{ color: "orangered" }}
@@ -206,14 +212,17 @@ export default function HomePage() {
                   icon={faJsSquare}
                   style={{ color: "gold" }}
                 />
+                <img src={nodeSVG}/>
                 <img src={sassSVG} />
                 <FontAwesomeIcon
                   className="reactLogo"
                   icon={faReact}
                   style={{ color: "cyan" }}
                 />
+                <img src={web3SVG}/>
                 <img src={viteSVG} />
                 <img src={netlifySVG} />
+                <img src ={javaSvg}/>
               </div>
             </div>
           </section>
