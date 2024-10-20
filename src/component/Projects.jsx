@@ -2,13 +2,12 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faReact,
-  
   faJsSquare,
 } from "@fortawesome/free-brands-svg-icons";
 import viteSVG from "../assets/svg/viteLogo.svg";
-import netlifySVG from "../assets/svg/netlifyLogo.svg";
+import vercelSvg from "../assets/svg/vercel.svg"
 import "../css/Projects.css";
-import sassSVG from "../assets/svg/sassLogo.svg";
+import firbaseSVG from "../assets/svg/firebase.svg"
 import retailSite from "../assets/AddressGenerator.png";
 import {
   faArrowLeft,
@@ -26,10 +25,10 @@ export default function Projects() {
     <FontAwesomeIcon icon={faJsSquare} style={{ color: "gold" }} />
   );
   const netlifyLogo = (
-    <img src={netlifySVG} className="netlifyLogo" alt="Netlify Logo" />
+    <img src={vercelSvg} className="netlifyLogo" alt="Vercel Logo" />
   );
   const viteLogo = <img src={viteSVG} className="viteLogo" alt="Vite Logo" />;
-  const sassLogo = <img src={sassSVG} className="sassLogo" alt="Sass Logo" />;
+  const fireBaseLogo = <img src={firbaseSVG} className="firebaseLogo" alt="Firebase Logo" />;
 
   function updateIndex(newIndex) {
     newIndex < 0
@@ -48,7 +47,7 @@ export default function Projects() {
           {viteLogo}
           {reactLogo}
           {jsLogo}
-          {sassLogo}
+          {fireBaseLogo}
         </>
       ),
       dependencies: (
