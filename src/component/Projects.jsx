@@ -9,6 +9,7 @@ import vercelSvg from "../assets/svg/vercel.svg"
 import "../css/Projects.css";
 import firbaseSVG from "../assets/svg/firebase.svg"
 import retailSite from "../assets/AddressGenerator.png";
+import tboard from "../assets/svg/tboard.png"
 import {
   faArrowLeft,
   faArrowRight,
@@ -75,6 +76,34 @@ export default function Projects() {
       ),
       demoUrl: "https://btc-address-deriver-qr-generator.vercel.app/",
       image: retailSite,
+    },
+    {
+      name: "JIRA/KANBAN Board",
+      techstack: (
+        <>
+          {viteLogo}
+          {reactLogo}
+          {jsLogo}
+        </>
+      ),
+      dependencies: (
+        <>
+          {netlifyLogo}
+          <p>Lucide React</p>
+        </>
+      ),
+      description: (
+        <>
+          <p>
+            Just a simple Jira board clone where you can
+            create and assign the tasks to your team.
+            Not just that, you can also drage and drop the task from one column
+            to another.
+          </p>
+        </>
+      ),
+      demoUrl: "https://tboard-five.vercel.app/",
+      image: tboard,
     }
    
   ];
