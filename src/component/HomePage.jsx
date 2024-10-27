@@ -10,7 +10,7 @@ import web3SVG from "../assets/svg/web3.svg"
 import netlifySVG from "../assets/svg/netlifyLogo.svg";
 import javaSvg from "../assets/svg/java.svg"
 import sassSVG from "../assets/svg/sassLogo.svg";
-import myResume from "../assets/pdf/Rishabh-raj-dev.resume.pdf";
+import myResume from "../assets/pdf/Rishabh-Raj.dev.Resume.pdf";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import {
