@@ -15,13 +15,20 @@ import {
   faArrowRight,
   faCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import nodeSVG from "../assets/svg/node.svg"
+import mongoDb from "../assets/svg/mongoDb.svg";
+import redis from "../assets/svg/redis.svg";
+import jwt from "../assets/svg/jwt.svg";
+import twilio from "../assets/svg/twilio.svg"
+import authImg from "../assets/image.png"
+
 
 export default function Projects() {
   const [activeIndex, setCurrentIndex] = useState(0);
   const reactLogo = (
     <FontAwesomeIcon icon={faReact} style={{ color: "cyan" }} />
   );
- 
+
   const jsLogo = (
     <FontAwesomeIcon icon={faJsSquare} style={{ color: "gold" }} />
   );
@@ -30,18 +37,53 @@ export default function Projects() {
   );
   const viteLogo = <img src={viteSVG} className="viteLogo" alt="Vite Logo" />;
   const fireBaseLogo = <img src={firbaseSVG} className="firebaseLogo" alt="Firebase Logo" />;
+  const nodeJsLogo = <img src={nodeSVG}/>;
+  const mongoDbLogo = <img src={mongoDb} className="MongDbLogo" alt="MongDbLogo" />;
+  const redisLogo = <img src={redis} className="Redislogo" alt="redisLogo" />;
+  const jwtLogo = <img src={jwt} className="jwtLogo" alt="Jwt Logo" />;
+  const twilioLogo = <img src={twilio} className="twilioLogo" alt="Twilio Logo" />;
+
 
   function updateIndex(newIndex) {
     newIndex < 0
       ? (newIndex = 0)
       : newIndex >= projects.length
-      ? (newIndex = projects.length - 1)
-      : newIndex;
+        ? (newIndex = projects.length - 1)
+        : newIndex;
     setCurrentIndex(newIndex);
   }
 
   const projects = [
     {
+      name: "Hybrid Auth Backend",
+      techstack: (
+        <>
+        {twilioLogo}
+        {redisLogo}
+        {jwtLogo}
+        </>
+      ),
+      dependencies: (
+        <>
+          <p>Express.js</p>
+          <p>Node.js</p>
+          <p>MongoDb</p>
+        </>
+      ),
+      description: (
+        <>
+          <p>
+            HybridAuth is a secure and scalable authentication system that supports both passwordless (OTP-based) and password-based login methods.
+            Built using Node.js and Express.js for a robust backend, it leverages MongoDB for persistent user data storage and Redis for efficient in-memory caching of OTPs.
+            Nodemailer and Twilio are integrated to handle OTP delivery via email and SMS, while JWT.io ensures secure session management by caching login credentials in the browser.
+            This project highlights my expertise in modern authentication technologies, focusing on performance, reliability, and user-friendly security.
+          </p>
+        </>
+      ),
+      demoUrl: "https://github.com/Rishabh-J08/hybrid-authSystem.git",
+      image: authImg,
+    }
+    ,{
       name: "BTC-ADDRESS-DERIVER",
       techstack: (
         <>
@@ -105,7 +147,7 @@ export default function Projects() {
       demoUrl: "https://tboard-five.vercel.app/",
       image: tboard,
     }
-   
+
   ];
 
   return (
@@ -156,11 +198,10 @@ export default function Projects() {
                 }}
               >
                 <span
-                  className={`${
-                    index === activeIndex
-                      ? "indicator-symbol-active"
-                      : "indicator-symbol"
-                  }`}
+                  className={`${index === activeIndex
+                    ? "indicator-symbol-active"
+                    : "indicator-symbol"
+                    }`}
                 >
                   <FontAwesomeIcon icon={faCircle} />
                 </span>
